@@ -35,6 +35,9 @@ public class CardTrick {
             System.out.println(card);
         }
 
+      Card luckyCard = new Card(1, "Spades");
+        System.out.println("The lucky card is: " + luckyCard.getValue() + " of " + luckyCard.getSuit());
+
         int userValue;
         String userSuit;
       try (Scanner scanner = new Scanner(System.in)) {
@@ -50,7 +53,11 @@ public class CardTrick {
             System.out.println("The card is in the magic hand!");
         } else {
             System.out.println("The card is not in the magic hand.");
-        }}
+        }
+     
+        if (userValue == luckyCard.getValue() && userSuit.equalsIgnoreCase(luckyCard.getSuit())) {
+            System.out.println("Wow! You picked the lucky card!");
+  }
 
         public static boolean isCardInHand(Card[] hand, int value, String suit) {
         for (Card card : hand) {
